@@ -48,12 +48,12 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-VERIFY = bool(environ.get('VERIFY', True))
+VERIFY = is_enabled(environ.get('VERIFY', True))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'zxlink.in')
 SHORTLINK_API = environ.get('SHORTLINK_API', '89e367badb1ee93eab04dd64450e18393d77d302')
 SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'zxlink.in')
 SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', '89e367badb1ee93eab04dd64450e18393d77d302')
-IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
+IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "10")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
